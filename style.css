@@ -1,0 +1,158 @@
+/* Gets rid of all space around text and buttons in header and body*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* makes the background that color and sets color for text and font */
+body{
+    background-image: linear-gradient(120deg, #f6d365, #fda085); 
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    font-size: 1.5rem;
+}
+
+ /* aligns everything to the center*/
+header, form {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+/* Increase size and set color to white and gets rid of border*/
+form input, form button{
+    padding: 0.5rem;
+    font-size: 2rem;
+    border: none;
+    background: white;
+}
+/* Gives button and its background color, sets cursor and gives a transiton */
+form button {
+    color: #fda085;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Makes the form button color and background color change when cursor is hovering over it */
+form button:hover{
+    background: #fda085;
+    color: white;
+}
+
+/* Aligns everything with the class todo-container to the center */
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* list-styles removes black bullets on list */
+.todo-list {
+    min-width: 30%;
+    list-style: none;
+}
+
+/* makes background white, color of text black, increase font size */
+/* Gives space between text and icons */
+.todo {
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+/* flex 1 moves the icons next to each other to the right */
+.todo li {
+    flex: 1;
+}
+
+/* Styles the icons */
+/* Gives them color, no border, adds padding, makes cursor to pointer and changes font size */
+.trash-btn, .complete-btn {
+    background: #ff6f47;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+/* Changes the background color of the complete button icon to green */
+.complete-btn {
+    background: rgb(73, 204, 73);
+}
+
+/* Gives padding around text in li list */
+.todo-item{
+    padding: 0rem 0.5rem;
+}
+
+/* Makes it so that we can not click on things that has that class */
+.fa-trash, .fa-check {
+    pointer-events: none;
+}
+
+/* puts a line through text and changes opacity */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
+
+/* Sets all these things to none. Affects things inside the select tag */
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+/* Affects things inside the div class "select" */
+/* Sets the position to be relative and hides any text that may overflow*/
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sets text color, gives width of 10rem and sets cursor to pointer */
+select {
+    color: #ff6f47;
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+/* Adds a pseudo element after select div */
+/* \25BC is the Unicode character for downward arrow */
+.select::after {
+    content: "\25BC";
+    position: absolute;
+    background: #ff6f47;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/*  */
+.select:hover::after {
+    background: white;
+    color: #ff6f47;
+}
